@@ -21,9 +21,9 @@ class Request
     public function get($param)
     {
         if ($this->rules == null) return null;
-
         $rules = str_replace('/', '\/', $this->route);
         preg_match('/^' . $rules . '$/u', $_SERVER['REQUEST_URI'], $m);
+
 
         if (isset($this->rules)) {
             $regex = explode(',', $this->rules);

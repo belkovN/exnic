@@ -2,7 +2,6 @@
 
 namespace App\Database;
 
-use App\Json;
 
 class Model
 {

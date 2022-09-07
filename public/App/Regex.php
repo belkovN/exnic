@@ -7,12 +7,12 @@ class Regex
 
     public static function date(): string
     {
-        return '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+        return '[0-9]{4}-[0-9]{2}-[0-9]{2}';
     }
 
     public static function int(): string
     {
-        return '(\d+)';
+        return '\d+';
     }
 
     public static function flot(): string

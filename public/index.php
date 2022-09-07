@@ -9,6 +9,10 @@ header('Content-Type: application/json; charset=utf-8');
 use App\Request;
 use App\Route\Route;
 use App\Helper;
+use App\Regex;
+
+
+
 
 Route::get('/user/list', ['App\Controller\UserController', 'all']);
 
@@ -23,8 +27,8 @@ Route::post('/user/save', ['App\Controller\UserController', 'save', 'regex:(\d+)
 Route::post('/user/store', ['App\Controller\UserController', 'save', 'regex:(\d+):user_id,regex:([a-zA-ZА-Яа-я]+):fname']);
 
 Route::get('/user/{id}/{date}', ['App\Controller\UserController', 'get'])
-    ->where('id', '\d+')
-    ->where('date', '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])');
+    ->where('id', Regex::int())
+    ->where('date', Regex::date());
 
 
 

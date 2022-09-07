@@ -16,7 +16,6 @@ final class Route
 
     private function addRoute($route, $class, $type)
     {
-
         $class['2'] = (!isset($class['2'])) ? null : $class['2'];
         self::$object->route[$type][] = ['route' => $route, 'class' => $class];
         self::$object->type = $type;
